@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real Dividend Yield Chart</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Real Dividend Yield Chart">
+  <meta name="author" content="Real Dividend Investor">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Real Dividend Yield Chart</h1>
+    <h2>A investigative tool on ShinyApp for dividend investor</h2>
+    <p>Real Dividend Investor<br/>Data Scientist</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This app tracks the real dividend yield in percentage of stock A. In financial reports, the annual dividend yield is expressed as the dividend per current share price (for the year in our case).</p>
+
+<p>However, when investors buy a stock, the entry price was not the current price that the financial report uses and thus the dividend yield does not reflect the real dividend of the investor. It has to be noted that actual real dividends may not be increasing even though the reported published dividend yield was increasing over a period of 3 years.</p>
+
+<p>This chart aims to show investors his/her real dividend yield based on the entry price which the investors buy the stock. Note that the stock price fluctuated between $1 - $5 and thus the input value could be in this range.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Parameters Used</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The chart was based on the following share price for stock A</p>
+
+<p><br>Year 1 = $2.50, dividend was $0.10 per share
+<br>Year 2 = $3.00, dividend was $0.15 per share
+<br>Year 3 = $2.50, dividend was $0.20 per share</p>
+
+<p>Investors input their entry price (purchase price of stock A) and based on the dividend pay out rate, a chart will be plotted to show the actual dividend yield and how it compares against published numbers. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Calculations</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>For example, if the entry price was $4, $3 and $4 respectively for year 1, 2 and 3 that the investor inputs into the ShinyApp.</p>
+
+<pre><code class="r">    id1 &lt;- (0.1/4)*100
+    id2 &lt;- (0.15/3)*100
+    id3 &lt;- (0.2/4)*100
+    Real &lt;- c(id1, id2, id3)
+    Real
+</code></pre>
+
+<pre><code>## [1] 2.5 5.0 5.0
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Charting</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app will take the input and calculate the yield in percentage based on the formula and plot the graph to show real and published yield. In our example, even though the reported dividend yield was increasing, the real dividend was lower because of the entry price.
+<img src="figure/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>It can be shown that depending on the entry price, the real dividend yield could be lower than the published numbers. Thus investor is advised to exercise due diligence when purchasing stock that has high dividend yield. This investigative tool on ShinyApp for dividend investor can be used for assessment. </p>
+
+<p>More parameters will be added in future upgrades. </p>
+
+<p>Thank you. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Parameters Used'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Calculations'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Charting'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Conclusion'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
